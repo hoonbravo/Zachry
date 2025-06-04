@@ -157,8 +157,8 @@ questionnaire_data <- questionnaire_data %>%
   ) %>%
   ungroup() %>%
   rename(
-    Growth_Mindset = Sum_Q34,
-    Emotional_Intelligence = Sum_Q35
+    Growth_Mindset = Sum_Q35,
+    Emotional_Intelligence = Sum_Q34
   )
 
 questionnaire_data$Student <- student_info$Full_Name[match(questionnaire_data$Student, student_info$UIN)]

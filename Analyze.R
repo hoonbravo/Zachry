@@ -218,7 +218,7 @@ summary(ergm(sc_ergm ~ edges + mutual +
 
 summary(ergm(en_ergm ~ edges + mutual +
               edgecov(GM_diff) + edgecov(EI_diff) +
-              # gwidegree(0.8, fixed = TRUE) + 
+              gwidegree(0.8, fixed = TRUE) +
               # dgwesp(type="OTP", decay = .5, fixed = TRUE) + # Transitivity: a-->b, b-->c, a-->c
               # dgwesp(type="ITP", decay = .5, fixed = TRUE) + # Cyclicality: a-->b, b-->c, c-->a
               nodeicov("GM") + nodeicov("EI") +
@@ -352,6 +352,8 @@ xQAPCorrelation(EI_diff, pb, NPERM = 1000, Directed = TRUE)[7]
 xQAPCorrelation(EI_diff, ad, NPERM = 1000, Directed = TRUE)[7]
 xQAPCorrelation(EI_diff, sc, NPERM = 1000, Directed = TRUE)[7]
 xQAPCorrelation(EI_diff, en, NPERM = 1000, Directed = TRUE)[7]
+
+xQAPCorrelation(EI_diff, GM_diff, NPERM = 1000, Directed = TRUE)[7]
 # xQAPCorrelation(ad_s, le, NPERM = 1000, Directed = TRUE)
 xQAPRegression(le, list(pb, ad, sc, en, gender_matrix, GM_diff, EI_diff), NPERM = 1000)
 xQAPLogisticRegression(le, list(pb, ad, sc, en), NPERM = 1000)
